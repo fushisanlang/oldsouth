@@ -53,6 +53,7 @@ func LoadData() {
 	file, err := os.Open("data.bin")
 	if err != nil {
 		fmt.Println("Error opening file:", err)
+		saveData()
 	}
 	defer file.Close()
 	decoder := gob.NewDecoder(file)
