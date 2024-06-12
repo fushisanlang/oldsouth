@@ -23,7 +23,7 @@ func saveReferenceFile() {
 	ReferenceMap["SP"] = "Systolic Pressure"
 	ReferenceMap["ST"] = "Step Count"
 	ReferenceMap["W"] = "Weight"
-	file, err := os.Create("reference.bin")
+	file, err := os.Create("data/reference.bin")
 	if err != nil {
 		fmt.Println("Error creating file:", err)
 		return
@@ -38,7 +38,7 @@ func saveReferenceFile() {
 }
 
 func LoadReferenceFile() {
-	file, err := os.Open("reference.bin")
+	file, err := os.Open("data/reference.bin")
 	if err != nil {
 		fmt.Println("Error opening file:", err)
 		saveReferenceFile()

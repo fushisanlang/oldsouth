@@ -35,7 +35,7 @@ func SaveDataByDate(code string, float float32, time time.Time) {
 }
 
 func saveData() {
-	file, err := os.Create("data.bin")
+	file, err := os.Create("data/data.bin")
 	if err != nil {
 		fmt.Println("Error creating file:", err)
 		return
@@ -50,7 +50,7 @@ func saveData() {
 }
 
 func LoadData() {
-	file, err := os.Open("data.bin")
+	file, err := os.Open("data/data.bin")
 	if err != nil {
 		fmt.Println("Error opening file:", err)
 		saveData()
